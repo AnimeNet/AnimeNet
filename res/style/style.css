@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+*{
+    margin: 0px;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background-color: #ecf0f1;
+}
+
+.header{
+    display:inline-block;
+    height: 415px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,.4), rgba(0,0,0,.4)),url("https://i.pinimg.com/originals/63/3c/4d/633c4db6b8a30581f18048232c88e66e.png");
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo_image{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 180px;
+}
+
+.logo_curve{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-top: -125px;
+    background-color: #ecf0f1;
+}
+
+.instagram_container{
+    position: absolute;
+    left: 25%;
+    margin-left: -230px;
+    margin-top: -150px;
+}
+
+.discord_container{
+    position: absolute;
+    right: 25%;
+    margin-right: -230px;
+    margin-top: -150px;
+}
+
+.instagram_container:hover,.discord_container:hover{
+    text-shadow: 0 0 5px #3498db,0 0 5px #3498db;
+    transition: 0.2s;
+}
+
+.instagram_container a,.discord_container a{
+    text-decoration: none;
+    color: white;
+}
+
+.instagram_container h2,.discord_container h2{
+    font-size: 20px;
+    font-weight: 800;
+    text-align: left;
+}
+.instagram_container p,.discord_container p{
+    font-size: 16px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.discord_container h2,.discord_container p{
+    margin-left: 40px;
+}
+
+.fa-instagram,.fa-discord{
+    font-size: 40px;
+    margin-top: -40px;
+}
+
+.fa-instagram{
+    float: right;
+    margin-right: -40px;
+}
+
+.fa-discord{
+    float: left;
+
+}
+
+.button_container{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.button_container a{
+    display: inline-block;
+    width: 150px;
+    padding: 15px;
+    text-align: center;
+    background-color: #3498db;
+    border-radius: 28px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+.button_container a:hover{
+    background-color: #2980b9;
+    transition: 0.2s;
+}
+
+.footer{
+    position: relative;
+    display: inline-block;
+    top: 100vh;
+    width: 100%;
+    color: #fff;
+    background-color: #3498db;
+    text-align: center;
+}
+.footer p{
+    padding: 20px;
+}
+
+    
+
+@media screen and (max-width:950px){
+    .instagram_container{
+        left: 30%;
+    }
+    
+    .discord_container{
+        right: 30%;
+    }
+}
+
+@media screen and (max-width:780px){
+
+    .header{
+        height: 515px;
+    }
+
+    .logo_image{
+        margin-top: 50px;
+    }
+
+    .instagram_container{
+        width: 200px;
+        position: static;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 25px;
+    }
+
+    .fa-instagram{
+        margin-right: 0px;
+    }
+    
+    .discord_container{
+        width: 230px;
+        position: static;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 23px;
+    }
+
+    .logo_curve{
+        display: none;
+    }
+}
