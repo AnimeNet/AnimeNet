@@ -1,0 +1,73 @@
+@media screen and (max-width:733px) {
+
+    /*Mobile Header*/
+    .main-header{
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .mobile-menu{
+        display: flex;
+    }
+
+    .combination-mark{
+        display: none;
+    }
+
+    .header-items{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px 0px;
+        z-index: 1;
+        border-top: 1px solid rgba(40, 42, 53,.2);
+        background-color: #fff;
+        translate: 0px -100%;
+        transition: 500ms;
+    }
+
+    .navigation-bar{
+       flex-direction: column;
+        padding: 0px;
+    }
+
+    .header-items .item{
+        width: 100%;
+        text-align: center;
+        padding: 5px 0px;
+    }
+
+    .item a{
+        font-size: 18px;
+    }
+
+    .button{
+        font-size: 18px;
+    }
+
+    .header-items .item:active,.header-items .item:hover{
+        background-color: rgba(0, 176, 155,.2);
+    }
+
+    .header-items .item:active a,.header-items .item:hover a{
+        color: rgb(0, 146, 129);
+    }
+
+    .user-tools{
+        flex-direction: column;
+        padding: 15px 0px 10px 0px;
+    }
+    
+    .user-tools .item:last-child{
+        display: none;
+    }
+
+    .is_open{
+        translate: 0px 0px;
+    }
+
+    .slide-counter{
+        display: none;
+    }
+
+}
