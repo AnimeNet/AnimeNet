@@ -3,56 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="H@ck">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./res/style/style.css">
+    <link rel="stylesheet" href="static/css/jnovel.css" type="text/css" >
+    <link rel="stylesheet" href="static/css/mobile.css" type="text/css" >   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script src="https://kit.fontawesome.com/926a224c23.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-    <title>AnimeNet | Home</title>
+    <title>JNovel | Home</title>
+    
 </head>
 <body>
-    <header class="header">
-        
-        <div class="logo_container">
-            <img src="res/image/logo.png" class="logo_image" width="200px">
+
+    <!--Header-->
+    <header class="main-header">
+        <div class="mobile-menu">
+            <button class="item" id="m-m-btn"><i class="fas fa-bars"></i></button>
+            <a href="#" class="logo-container brandmark"><img src="static/image/brandmark.svg" class="logo"></a>
+            <button class="item" id="m-o-sa-btn"><i class="fas fa-search"></i></button>
         </div>
 
-        <div class="instagram_container">
-            <a href="https://www.instagram.com/animenet_ita/" target="_blank">
-                <h2>AnimeNet</h2>
-                <p href="">Seguici su instagram</p>
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
+        <a href="#" class="logo-container combination-mark"><img src="static/image/combination-mark.svg" class="logo"></a>
 
-        <div class="discord_container">
-            <a href="https://discord.gg/RefhZx4vn7" target="_blank">
-                <h2>Discord</h2>
-                <p href="#">Unisciti al server discord</p>
-                <i class="fab fa-discord"></i>
-            </a>
-        </div>
+        <div class="header-items">
 
-        <div class="logo_curve">
-        </div>
+            <ul class="navigation-bar">
 
+                <li class="item"><a href="#">Serie</a></li>
+                <li class="item"><a href="#">Top</a></li>
+                <li class="item"><a href="#">Calendario</a></li>
+                <li class="item"><a href="#">Notizie</a></li>
+
+            </ul>
+            
+            <ul class="user-tools">
+                <!--
+                <li class="item"><a href="#"><i class="fas fa-bookmark"></i></a></li>
+                <li class="item"><a href="#"><i class="fas fa-user"></i></a></li>
+                -->
+                <li><a href="#" class="button">Login</a></li>
+                <li class="item" id="o-sa-btn"><a href="#"><i class="fas fa-search"></i></a>
+            </ul>
+        </div>
     </header>
 
-    <div class="button_container">
-        <a href="https://www.instagram.com/animenet_ita/" target="_blank">Instagram</a>
-        <a href="https://www.amazon.it/hz/wishlist/ls/1VWEK1FBB5MKV?ref_=wl_share" target="_blank">Wishlist</a>
-        <a href="#">Cooming Soon</a>
-        <a href="https://t.me/animenet_ita">Telegram</a>
-        <a href="https://discord.gg/RefhZx4vn7">Discord</a>
+
+    <div class="search-area">
+        <form class="form">
+            <div class="input-container">
+                <button id="s-btn"><i class="fas fa-search"></i></button>
+                <input type="text" class="text-input round" placeholder="Cerca...">
+                <button id="c-sa-btn"><i class="fas fa-times"></i></button>
+            </div>
+        </form>
+    </div>
+    <div class="shadow"></div>
+    <script>
+        $("#m-m-btn").click(() =>{
+            $(".header-items").toggleClass("is_open");
+        })
+        $("#o-sa-btn,#m-o-sa-btn").click(()=>{
+            $(".shadow").fadeToggle(200);
+            $(".search-area").toggleClass("is_open");
+
+        })
+        $("#c-sa-btn,.shadow").click(()=>{
+            $(".shadow").fadeToggle(200);
+            $(".search-area").toggleClass("is_open");
+        })
+    </script>
+  
+
+    <div class="main-wrap">
+        <div class="slider-container">
+            <button id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider">
+                <div class="slide">
+                    <a href="#">
+                        <img src="static/image/acmi-slide-image.png" class="slide-image">
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="#">
+                        <img src="static/image/ww-slide-image.png" class="slide-image">
+                    </a>
+                </div>
+            </div>
+            <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class="slide-counter">
+                <span id="1" class="is_active" onclick="change_slide(null,1)"></span>
+                <span id="2" onclick="change_slide(null,2)"></span>
+            </div>
+        </div>
     </div>
 
+    <script>
+        var slides = $(".slider").children();
+        var slidesCount = slides.length;
+        var currentSlide = 1;
+        var interval = true;
 
-    <footer class="footer">
-            <p>Copyright © AnimeNet All right Reserved</p>
-    </footer>
+        function change_slide(dir=null,go_to_slide=null){
+            var translate_value;
+            $(".slide-counter").children("#"+String(currentSlide)).removeClass("is_active");
 
+            if(go_to_slide == null){
+                if(dir = -1){
+                    currentSlide += 1;
+                }else{
+                    currentSlide -= 1
+                }
+                if(currentSlide > slidesCount){
+                    currentSlide = 1;
+                    var translate_value=0;
+                }else{
+                    translate_value=parseInt($(".slide").css("translate")) +dir*100;
+                }
+            }
+
+            if(go_to_slide != null){
+                currentSlide = go_to_slide;
+                translate_value = (go_to_slide -1) *-100;
+            }
+
+            $(".slide").css("translate",String(translate_value)+"%");
+            $(".slide-counter").children("#"+String(currentSlide)).addClass("is_active")
+            $("#prev-btn,#next-btn").attr("disabled","disabled")
+            interval = false;
+            console.log(interval)
+        }
+
+        $("#next-btn").click(function(){
+            change_slide(-1);
+        });
+
+        $("#prev-btn").click(function(){
+            change_slide(1);
+        });
+
+        setInterval(() => {
+            if(interval == false){
+                return
+            }
+            change_slide(-1)
+            $("#prev-btn,#next-btn").attr("disabled","disabled");
+        }, 5000);
+
+        $(".slide").on("transitionend",function(){
+            $("#prev-btn,#next-btn").removeAttr("disabled");
+            interval = true;
+        });
+    </script>
+
+
+    
 </body>
 </html>
