@@ -1,1 +1,302 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+}
+
+
+
+.main-header{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+    box-shadow: 0 0 5px rgba(40, 42, 53,.5);
+    width: 100%;
+    height: 70px;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.main-wrap{
+    position: absolute;
+    margin-top: 70px;
+}
+
+.mobile-menu{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.item:hover,.item:active,.item a:hover,.item a:active{
+    color: rgb(0, 146, 129);
+}
+
+.logo-container{
+    display: flex;
+}
+
+.header-items{
+    display: inherit;
+}
+
+.navigation-bar,.user-tools{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item{
+    padding: 0px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.item a{
+    font-size: 20px;
+    font-weight: 600;
+    color: #282A35;
+    text-decoration: none;
+}
+
+.button{
+    color: #fff;
+    background-color: #00b09b;
+    padding: 10px 40px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 40px;
+
+}
+
+.button:hover,.button:active{
+    background-color: rgb(0, 146, 129);
+}
+
+/*Input*/
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.input-container{
+    padding: 0px 15px;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+}
+
+.text-input{
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    background: #fff;
+    padding: 10px 40px;
+    font-size: 18px;
+    color: #282A35;
+    box-shadow: 0 0 5px #282A35;
+}
+
+
+.text-input:focus{
+    outline: none;
+    border: 1px solid rgb(0, 173, 196);
+    box-shadow: 0 0 0 3px rgb(0, 173, 196,.5);
+}
+
+.round{
+    border-radius: 20px;
+}
+
+
+.input-container button{
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #282A35;
+}
+
+#s-btn{
+    left: 20px;
+}
+
+#c-sa-btn{
+    right: 20px;
+}
+
+.search-area{
+    translate: 0px -200%;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    z-index: 4;
+    padding: 20px 0px;
+    transition: 500ms;
+}
+
+.shadow{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,.5);
+    z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Slider*/
+.slider-container{
+    width: 100%;
+    position: relative;
+}
+
+.slider{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow:hidden;
+}
+
+.slide{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #fff;
+    min-width: 100%;
+    translate: 0%;
+    transition: 500ms;
+}
+
+.slide a{
+    display: flex;
+    width: 100%;
+}
+
+.slide-image{
+    width: 100%;
+}
+
+.slide-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.slide-title{
+    padding-bottom: 20px;
+}
+
+.slider-container button{
+    position: absolute;
+    background: transparent;
+    border: 0px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    top: 50%;
+    translate: 0 -50%;
+    cursor: pointer;
+    height: 100%;
+    text-shadow: 0px 0px 5px rgba(40, 42, 53);
+    padding: 0px;
+}
+
+.slider-container button .fas{
+    padding: 10px;
+}
+
+#prev-btn{
+    left: 0px;
+    z-index: 1;
+}
+
+#next-btn{
+    right: 0px;
+}
+
+.slide-counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    translate: -50% 0%;
+}
+
+.slide-counter span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: rgba(40, 42, 53);
+    border: 2px solid rgb(0, 146, 129);
+    margin-left: 10px;
+}
+
+.slider-container .is_active{
+    border-radius: 20px;
+    background-color: rgb(0, 146, 129);
+    transition: 100ms;
+}
+
+
+
+
+@media screen and (max-width:500px) {
+    .slider-container button{
+        font-size: 20px;
+    }
+
+}
+
+
+.is_open{
+    translate: 0px 0px;
+}
