@@ -24,6 +24,9 @@ body{
     margin-right: auto;
     margin-left: auto;
     margin-top: 180px;
+    animation: pulse 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .logo_curve{
@@ -44,61 +47,62 @@ body{
     margin-top: -150px;
 }
 
-.discord_container{
+.telegram_container{
     position: absolute;
     right: 25%;
     margin-right: -230px;
     margin-top: -150px;
 }
 
-.instagram_container:hover,.discord_container:hover{
+.instagram_container:hover,.telegram_container:hover{
     text-shadow: 0 0 5px #3498db,0 0 5px #3498db;
     transition: 0.2s;
 }
 
-.instagram_container a,.discord_container a{
+.instagram_container a,.telegram_container a{
     text-decoration: none;
     color: white;
 }
 
-.instagram_container h2,.discord_container h2{
+.instagram_container h2,.telegram_container h2{
     font-size: 20px;
     font-weight: 800;
     text-align: left;
 }
-.instagram_container p,.discord_container p{
-    font-size: 16px;
+.instagram_container p,.telegram_container p{
+    font-size: 15px;
     text-align: left;
     text-decoration: underline;
 }
 
-.discord_container h2,.discord_container p{
+.telegram_container h2,.telegram_container p{
     margin-left: 40px;
 }
 
-.fa-instagram,.fa-discord{
+.fa-instagram,.fa-telegram{
     font-size: 40px;
     margin-top: -40px;
 }
 
 .fa-instagram{
     float: right;
-    margin-right: -40px;
+    margin-right: -45px;
 }
 
-.fa-discord{
+.fa-telegram{
     float: left;
-
+    margin-left: -5px;
 }
 
 .button_container{
-    width: 100%;
-    text-align: center;
     margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 50px;
 }
 
 .button_container a{
-    display: inline-block;
+    margin: auto;
     width: 150px;
     padding: 15px;
     text-align: center;
@@ -107,9 +111,16 @@ body{
     color: #fff;
     text-decoration: none;
     font-size: 20px;
-    margin-right: 15px;
-    margin-top: 15px;
 }
+
+@media screen and (max-width:890px){
+    .button_container{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
 .button_container a:hover{
     background-color: #2980b9;
     transition: 0.2s;
@@ -118,12 +129,12 @@ body{
 .footer{
     position: relative;
     display: inline-block;
-    top: 100vh;
+    margin-top: 50px;
     width: 100%;
-    color: #fff;
-    background-color: #3498db;
+    color: #3498db;
     text-align: center;
 }
+
 .footer p{
     padding: 20px;
 }
@@ -132,11 +143,11 @@ body{
 
 @media screen and (max-width:950px){
     .instagram_container{
-        left: 30%;
+        left: 35%;
     }
     
-    .discord_container{
-        right: 30%;
+    .telegram_container{
+        right: 35%;
     }
 }
 
@@ -163,7 +174,7 @@ body{
         margin-right: 0px;
     }
     
-    .discord_container{
+    .telegram_container{
         width: 230px;
         position: static;
         display: block;
@@ -174,5 +185,17 @@ body{
 
     .logo_curve{
         display: none;
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
     }
 }
